@@ -63,6 +63,7 @@ bool LLTpaReader::load() {
         }
     }
     ll::file_utils::writeFile(getSelf().getPluginDir() / "output.json", json.dump(4));
+    getSelf().getLogger().warn("Tpa data has been exported in plugins/LLTpaReader/output.json");
     return true;
 }
 

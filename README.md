@@ -1,35 +1,33 @@
-# LeviLamina Plugin Template
+# LLTpaReader
 
-A LeviLamina plugin template
-
-This plugin is a template for developing LeviLamina plugins.
-
-## Install
-
-Generate a new repository from this template.
+Reading the data from old LLTpa, then convert it to json file.
 
 ## Usage
 
-Before using this plugin template, make sure that you have installed XMake and a Minecraft Bedrock Server with LeviLamina.
+Put old LLTpa data in `plugins/LLTpaReader/data`, then start your server.  
+The result will be exported in `plugins/LLTpaReader/output.json`
 
-1. Clone the new repository into a local folder.
+## Output format
 
-1. Change the plugin name and the expected LeviLamina version in `xmake.lua`.
-
-1. Add your code.
-
-1. Run `xmake repo -u` in the root of the repository.
-
-1. Run `xmake` to build the plugin.
-
-Now the build is complete at `bin/`.
-
-## Contributing
-
-Ask questions by creating an issue.
-
-PRs accepted.
-
-## License
-
-CC0-1.0 © LiteLDev
+```jsonc
+{
+    "homes": {
+        "xuid": {
+            "home's name": {
+                "dimension": 0,
+                "x": 285.1832275390625,
+                "y": 26.620010375976563,
+                "z": -186.39068603515625
+            }
+        }
+    },
+    "warps": {
+        "warp's name": {
+            "dimension": 0,
+            "x": -24.487401962280273,
+            "y": 67.62001037597656,
+            "z": -276.75738525390625
+        }
+    }
+}
+```
