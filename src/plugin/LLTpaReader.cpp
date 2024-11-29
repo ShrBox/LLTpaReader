@@ -1,18 +1,13 @@
 #include "plugin/LLTpaReader.h"
 
-#include <cstdlib>
 #include <memory>
 #include <string>
 #include <unordered_map>
-
 #include "Homes.h"
 #include "ll/api/data/KeyValueDB.h"
 #include "ll/api/io/FileUtils.h"
-#include "ll/api/mod//NativeMod.h"
 #include "ll/api/mod/RegisterHelper.h"
 #include "nlohmann/json.hpp"
-#include "nlohmann/json_fwd.hpp"
-
 
 namespace lltpa_reader {
 
