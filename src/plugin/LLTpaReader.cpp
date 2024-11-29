@@ -8,9 +8,8 @@
 #include "Homes.h"
 #include "ll/api/data/KeyValueDB.h"
 #include "ll/api/io/FileUtils.h"
-#include "ll/api/plugin/NativePlugin.h"
-#include "ll/api/plugin/Plugin.h"
-#include "ll/api/plugin/RegisterHelper.h"
+#include "ll/api/mod//NativeMod.h"
+#include "ll/api/mod/RegisterHelper.h"
 #include "nlohmann/json.hpp"
 #include "nlohmann/json_fwd.hpp"
 
@@ -62,7 +61,7 @@ bool LLTpaReader::load() {
             };
         }
     }
-    ll::file_utils::writeFile(getSelf().getPluginDir() / "output.json", json.dump(4));
+    ll::file_utils::writeFile(getSelf().getModDir() / "output.json", json.dump(4));
     getSelf().getLogger().warn("Tpa data has been exported in plugins/LLTpaReader/output.json");
     return true;
 }
@@ -73,4 +72,4 @@ bool LLTpaReader::disable() { return true; }
 
 } // namespace lltpa_reader
 
-LL_REGISTER_PLUGIN(lltpa_reader::LLTpaReader, lltpa_reader::instance);
+LL_REGISTER_MOD(lltpa_reader::LLTpaReader, lltpa_reader::instance);
